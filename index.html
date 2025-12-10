@@ -1,0 +1,31 @@
+<head>
+    <title>Bingo Board Generator</title>
+</head>
+
+<body>
+    <div id="bingo-board-container">
+
+    </div>
+</body>
+
+<script>
+    let boardX = 5;
+    let boardY = 5;
+
+    let box_size_x = 100;
+    let box_size_y = 100;
+
+
+    const bingoDiv = document.getElementById("bingo-board-container");
+
+    for(let i = 0; i < boardY; i++) {
+        for(let i = 0; i < boardX; i++) {
+            var x = document.createElement("input" + i.toString());
+            x.setAttribute("type", "text");
+            x.style.cssText=`border:1px solid #ccc; width:${box_size_x.toString()}px; height:${box_size_y.toString()}px;`
+            bingoDiv.appendChild(x);
+        }
+        var lb = document.createElement("br");
+        bingoDiv.appendChild(lb);
+    }
+</script>
